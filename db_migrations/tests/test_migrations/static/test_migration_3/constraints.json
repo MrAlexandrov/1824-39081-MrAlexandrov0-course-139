@@ -111,6 +111,14 @@
       "table_name": "spaceship_model"
     },
     {
+      "check_clause": "horsepower IS NOT NULL",
+      "column_name": null,
+      "constraint_type": "CHECK",
+      "foreign_or_primary_column_name": null,
+      "foreign_or_primary_table_name": null,
+      "table_name": "spaceship_model"
+    },
+    {
       "check_clause": null,
       "column_name": "id",
       "constraint_type": "PRIMARY KEY",
