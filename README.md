@@ -31,8 +31,11 @@
 
 ## Как тестировать домашку
 
-   make docker-runtests
+Локальный запуск: 
+```make runtests```
 
+Запуск через Docker:
+```make docker-runtests```
 
 ## Как сдать домашку
 Подробности позже.

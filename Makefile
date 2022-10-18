@@ -24,7 +24,7 @@ $(RUN_TARGETS): run-%: docker-image
 docker-image: .docker-image-timestamp
 
 .docker-image-timestamp: docker/testsuite/Dockerfile
-	docker build -t testsuite -f docker/testsuite/Dockerfile ../..
+	docker build -t testsuite -f docker/testsuite/Dockerfile .
 	touch $@
 
 clean:
