@@ -162,7 +162,7 @@
         "column_name": "horsepower",
         "data_type": "double precision",
         "datetime_precision": null,
-        "is_nullable": "YES",
+        "is_nullable": "NO",
         "numeric_precision": 53,
         "udt_name": "float8"
       }
