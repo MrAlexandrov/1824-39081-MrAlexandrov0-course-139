@@ -26,10 +26,11 @@ def test_data(assert_table_data, table_name):
 
 
 class TestCornerCases:
+    ALL_MIGRATIONS = util.get_migrations()
     MIGRATION_3_WITH_EXTRA = (
-        MIGRATION_3[:-1] + 
+        ALL_MIGRATIONS[:3] + 
         [const.EXTRA_MODIFY_SQL] + 
-        MIGRATION_3[-1:]
+        ALL_MIGRATIONS[3:4]
     )
 
     @pytest.mark.parametrize('table_name', const.TABLES)
