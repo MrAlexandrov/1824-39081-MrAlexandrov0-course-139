@@ -3,8 +3,10 @@ import re
 import json
 import sys
 
-# Execute the command
+# read from stdin result of tests
 result = sys.stdin.read()
+
+print(result)
 
 # Extract the number of successful and failed tests from the output
 success_tests = re.search(r'(\d+) passed', result)

@@ -9,7 +9,6 @@ before_script:
 
 stages:
   - Static Analysis
-  - Test
   - Calculating Score
 
 flake8:
@@ -19,22 +18,6 @@ flake8:
   - flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
   # exit-zero treats all errors as warnings
   - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=79 --statistics
-
-pytest:
-  stage: Test
-  services:
-    - postgres:12.2-alpine
-  variables:
-    TESTSUITE_ALLOW_ROOT: 1
-    PYTEST: pytest
-    POSTGRES_DB: db_migrations_homework
-    POSTGRES_USER: testsuite
-    POSTGRES_PASSWORD: testsuite
-    POSTGRES_HOST_AUTH_METHOD: trust
-    GITLAB_RUN: "true"
-    PYTEST_ADDOPTS: "--postgresql=postgresql://testsuite:testsuite@postgres/"
-  script:
-  - python -m pytest -vv db_migrations/tests
 
 score:
   stage: Calculating Score
