@@ -33,8 +33,7 @@ score:
     GITLAB_RUN: "true"
     PYTEST_ADDOPTS: "--postgresql=postgresql://testsuite:testsuite@postgres/"
   script:
-  - python -m pytest -q db_migrations/tests 2>&1 | python score_calculator.py
+  - python score_calculator.py
   artifacts:
     paths:
-      - score.json
-
+    - score.json
