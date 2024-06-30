@@ -31,6 +31,14 @@
       "foreign_or_primary_column_name": null,
       "foreign_or_primary_table_name": null,
       "table_name": "driver"
+    },
+    {
+      "check_clause": null,
+      "column_name": "login",
+      "constraint_type": "UNIQUE",
+      "foreign_or_primary_column_name": "login",
+      "foreign_or_primary_table_name": "driver",
+      "table_name": "driver"
     }
   ],
   "spaceship": [

@@ -17,22 +17,24 @@ try:
     success_tests = re.search(r'(\d+) passed', output)
     error_tests = re.search(r'(\d+) errors', output) 
     failed_tests = re.search(r'(\d+) failed', output)
-    success_tests_number = float(success_tests.group(1) if success_tests else 0)
-    failed_tests_number = float(failed_tests.group(1) if failed_tests else 0) + float(error_tests.group(1) if error_tests else 0)
+    success_tests_number = int(success_tests.group(1) if success_tests else 0)
+    failed_tests_number = int(failed_tests.group(1) if failed_tests else 0) + int(error_tests.group(1) if error_tests else 0)
     total_tests_number = success_tests_number + failed_tests_number
-    percentage =  success_tests_number * 100 / total_tests_number
-    score = int(round(percentage / 10))
+    percentage =  success_tests_number * 100.0 / total_tests_number
 
     print("Number of successful tests:", success_tests_number)
     print("Number of total tests:", total_tests_number)
     print("Percentage of completed tests:", percentage)
-    print("Score:", score)
-    data = {"score": score}
 
-    with open("score.json", "w") as file:
+    with open("result.json", "w") as file:
+        data = {
+            "tests_ok": success_tests_number,
+            "tests_count": total_tests_number,
+        }
+        if errors:
+            data["stderr"] = errors
+
         json.dump(data, file)
-
-    print ("Score saved")
 
 finally:
     sys.exit(0)

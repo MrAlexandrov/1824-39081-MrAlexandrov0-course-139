@@ -36,4 +36,4 @@ score:
   - python score_calculator.py
   artifacts:
     paths:
-    - score.json
+    - result.json

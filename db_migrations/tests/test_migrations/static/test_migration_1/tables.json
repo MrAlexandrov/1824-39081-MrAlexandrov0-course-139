@@ -2,7 +2,7 @@
     "driver": [
       {
         "character_maximum_length": null,
-        "column_default": null,
+        "column_default": "nextval('driver_id_seq'::regclass)",
         "column_name": "id",
         "data_type": "integer",
         "datetime_precision": null,
@@ -54,7 +54,7 @@
     "spaceship": [
       {
         "character_maximum_length": null,
-        "column_default": null,
+        "column_default": "nextval('spaceship_id_seq'::regclass)",
         "column_name": "id",
         "data_type": "integer",
         "datetime_precision": null,
@@ -86,7 +86,7 @@
     "spaceship_manufacturer": [
       {
         "character_maximum_length": null,
-        "column_default": null,
+        "column_default": "nextval('spaceship_manufacturer_id_seq'::regclass)",
         "column_name": "id",
         "data_type": "integer",
         "datetime_precision": null,
@@ -128,7 +128,7 @@
     "spaceship_model": [
       {
         "character_maximum_length": null,
-        "column_default": null,
+        "column_default": "nextval('spaceship_model_id_seq'::regclass)",
         "column_name": "id",
         "data_type": "integer",
         "datetime_precision": null,
