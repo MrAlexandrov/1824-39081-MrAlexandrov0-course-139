@@ -15,7 +15,7 @@ $(RUNTEST_TARGETS): runtests-%:
 	PYTHONPATH=../.. $(PYTEST) $(PYTEST_ARGS) $*/tests
 
 $(DOCKER_TARGETS): docker-runtests-%: docker-image
-	docker-compose -f docker/docker-compose.yaml run runtests-$* \
+	docker-compose -f docker/docker-compose.yaml run --rm runtests-$* \
 		pytest $(PYTEST_ARGS) $*/tests
 
 $(RUN_TARGETS): run-%: docker-image
